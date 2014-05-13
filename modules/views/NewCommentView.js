@@ -1,18 +1,16 @@
 define(['backbone',
- 'text!modules/templates/new-comment-template.html'],
- function(Backbone, newCommentTemplate){
+ 'text!modules/templates/new-comment-template.html',
+ 'modules/views/BaseView'],
+ function(Backbone, newCommentTemplate, BaseView){
 
-	var NewCommentView = Backbone.View.extend({
-
-		tagName: 'li',
-		render: function(commentObj){
-
-			console.log("Inside the NewCommentView render method....");
-
-			var template = _.template(newCommentTemplate, commentObj);
-			return this.$el.html(template);
-		}
-	});
-
+    //The below view is for creating the single comment
+    var NewCommentView = BaseView.extend({
+        tagName: 'li',
+        template: newCommentTemplate,
+        render: function(){
+        	console.log("Returning a single template....");
+            return this.$el.html(this.templateCache);
+        }
+    });
 	return NewCommentView;
 });

@@ -1,19 +1,12 @@
-<B5>4 Comments</B5>
-<form class="comments-form">
-	<div class="form-row">
-		<textarea class="comment-content" id="content" cols="37" rows="10"></textarea>
-	</div>
-	<div class="form-row">
-		<label>Email: </label>
-		<input type="email" class="emailId" id="emailId"></input>
-		<button class="btn btn-info btn-xs">Post</button>
-	</div>
-	<ul class="comments-list">
-			<%_.each(comments, function(comment){%>
-			<li>
-				<small class="muted">Posted by <%=comment.get('emailId')%> a few seconds ago...</small></br>
-				<B4><%=comment.get('commentMsg')%></B4>
-			</li>
-			<%});%>
-	</ul>
-</form>
+    <H5>4 Comments</H5>
+    <form class="comments-form form-horizontal well">
+        <div class="form-row">
+            <textarea class= "form-control" name="content" id="content" cols="30" rows="5"></textarea>
+        </div>
+        <div class="form-row">
+            <label>Email: </label>
+            <input type="text" id="emailId" class="form-control"></input>
+            <button class="btn btn-info form-control">Post</button>
+        </div>
+    </form>
+<ul class="comments-list"></ul>
